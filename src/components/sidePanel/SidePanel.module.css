@@ -1,0 +1,48 @@
+.backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -10;
+    transition: all 0.3s linear;
+
+}
+
+.backdrop.visible {
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.sidePanel {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 500px;
+    background-color: white;
+    pointer-events: none;
+    transition: all 0.3s linear;
+    transform: translateX(100%);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.sidePanel.visible {
+    pointer-events: all;
+    transform: translateX(0);
+}
+
+.header {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid darkgray;
+}
+
+.content {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+}

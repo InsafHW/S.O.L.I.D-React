@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import classes from './App.module.css'
+import {SidePanel} from './components/sidePanel/SidePanel'
+import {useState} from 'react'
+import {ExpandButton} from './components/expandButton/ExpandButton'
+import {Route, Routes} from 'react-router-dom'
+import {UserList_Wrong} from './principels/S/wrongSolution/UserList_Wrong'
+import {UserList_Right} from './principels/S/rightSolution/UserList_Right'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [showSidePanel, setShowSidePanel] = useState(false)
+
+    return (
+        <div>
+            <ExpandButton
+                onClick={() => setShowSidePanel(true)}
+                style={{
+                    position: 'absolute',
+                    right: 0,
+                    marginRight: '10px',
+                    marginTop: '6px'
+                }}
+            />
+            <SidePanel
+                show={showSidePanel}
+                close={() => setShowSidePanel(false)}
+            />
+            <Routes>
+                <Route path={'/srp/wrong'} element={<UserList_Wrong/>}/>
+                <Route path={'/srp/right'} element={<UserList_Right/>}/>
+            </Routes>
+        </div>
+    )
 }
 
-export default App;
+export default App
