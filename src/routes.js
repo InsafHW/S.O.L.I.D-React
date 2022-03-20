@@ -2,6 +2,7 @@ import {UserList_Wrong} from './principels/S/wrongSolution/UserList_Wrong'
 import {UserList_Right} from './principels/S/rightSolution/UserList_Right'
 import {User_Wrong} from './principels/O/wrongSolution/User_Wrong'
 import {User_Right} from './principels/O/rightSolution/User_Right'
+import {Modal_Wrong} from './principels/L/wrongSolution/Modal_Wrong'
 
 const routes = [
     {
@@ -31,7 +32,17 @@ const routes = [
             email: 'super@mail.com'
         }}/>,
         title: 'Open/Closed Principle. Right'
+    },
+    {
+        path: '/lsp/wrong',
+        element: <Modal_Wrong/>,
+        title: 'Liskov Substitution Principle. Wrong'
     }
+    // {
+    //     path: '/lsp/right',
+    //     element: <Modal_Right/>,
+    //     title: 'Liskov Substitution Principle. Right'
+    // }
 ]
 
 export {
