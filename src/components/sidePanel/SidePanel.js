@@ -1,5 +1,6 @@
 import classes from './SidePanel.module.css'
 import {Link} from 'react-router-dom'
+import {routes} from '../../routes'
 
 function SidePanel({
     show,
@@ -22,8 +23,13 @@ function SidePanel({
                     <button onClick={close}>X</button>
                 </div>
                 <div className={classes.content}>
-                    <Link onClick={close} to={'/srp/wrong'}>Single Responsibility Principle. Wrong</Link>
-                    <Link onClick={close} to={'/srp/right'}>Single Responsibility Principle. Right</Link>
+                    {routes.map(r => (
+                        <Link
+                            key={r.path}
+                            onClick={close}
+                            to={r.path}
+                        >{r.title}</Link>
+                    ))}
                 </div>
             </div>
         </div>

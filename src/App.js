@@ -5,6 +5,7 @@ import {ExpandButton} from './components/expandButton/ExpandButton'
 import {Route, Routes} from 'react-router-dom'
 import {UserList_Wrong} from './principels/S/wrongSolution/UserList_Wrong'
 import {UserList_Right} from './principels/S/rightSolution/UserList_Right'
+import {routes} from './routes'
 
 function App() {
     const [showSidePanel, setShowSidePanel] = useState(false)
@@ -25,8 +26,13 @@ function App() {
                 close={() => setShowSidePanel(false)}
             />
             <Routes>
-                <Route path={'/srp/wrong'} element={<UserList_Wrong/>}/>
-                <Route path={'/srp/right'} element={<UserList_Right/>}/>
+                {routes.map(r => (
+                    <Route
+                        key={r.path}
+                        path={r.path}
+                        element={r.element}
+                    />
+                ))}
             </Routes>
         </div>
     )
