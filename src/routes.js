@@ -3,6 +3,8 @@ import {UserList_Right} from './principels/S/rightSolution/UserList_Right'
 import {User_Wrong} from './principels/O/wrongSolution/User_Wrong'
 import {User_Right} from './principels/O/rightSolution/User_Right'
 import {Modal_Wrong} from './principels/L/wrongSolution/Modal_Wrong'
+import {User_Wrong_I} from './principels/I/wrongSolution/User_Wrong'
+import {User_Right_I} from './principels/I/rightSolution/User_Right'
 
 const routes = [
     {
@@ -37,12 +39,22 @@ const routes = [
         path: '/lsp/wrong',
         element: <Modal_Wrong/>,
         title: 'Liskov Substitution Principle. Wrong'
-    }
+    },
     // {
     //     path: '/lsp/right',
     //     element: <Modal_Right/>,
     //     title: 'Liskov Substitution Principle. Right'
     // }
+    {
+        path: '/isp/wrong',
+        element: <User_Wrong_I/>,
+        title: 'Interface Segregation Principle. Wrong'
+    },
+    {
+        path: '/isp/right',
+        element: <User_Right_I/>,
+        title: 'Interface Segregation Principle. Right'
+    }
 ]
 
 export {
