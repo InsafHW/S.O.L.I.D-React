@@ -5,6 +5,8 @@ import {User_Right} from './principels/O/rightSolution/User_Right'
 import {Modal_Wrong} from './principels/L/wrongSolution/Modal_Wrong'
 import {User_Wrong_I} from './principels/I/wrongSolution/User_Wrong'
 import {User_Right_I} from './principels/I/rightSolution/User_Right'
+import {UserList_Wrong_D} from './principels/D/wrongSolution/UserList_Wrong_D'
+import {UserList_Right_D} from './principels/D/rightSolution/UserList_Right_D'
 
 const routes = [
     {
@@ -54,6 +56,16 @@ const routes = [
         path: '/isp/right',
         element: <User_Right_I/>,
         title: 'Interface Segregation Principle. Right'
+    },
+    {
+        path: 'dip/wrong',
+        element: <UserList_Wrong_D/>,
+        title: 'Dependency Inversion Principle. Wrong'
+    },
+    {
+        path: 'dip/right',
+        element: <UserList_Right_D/>,
+        title: 'Dependency Inversion Principle. Right'
     }
 ]
 
